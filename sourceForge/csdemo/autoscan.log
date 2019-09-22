@@ -1,0 +1,4 @@
+autoscan: warning: missing AC_PROG_MAKE_SET wanted by: 
+	auto.sh:8
+	auto.sh:9
+	auto.sh:10

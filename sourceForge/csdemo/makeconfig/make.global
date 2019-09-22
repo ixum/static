@@ -1,0 +1,31 @@
+# recursive make
+.PHONY: subdirs ${SUBDIRS} cleansubdirs cleanallsubdirs \
+gcovsubdirs gcovrsubdirs
+
+subdirs: ${SUBDIRS}
+${SUBDIRS}:
+	${MAKE} -C $@ all
+
+# recursive make clean
+cleansubdirs:
+	@for dir in ${SUBDIRS}; do \
+		${MAKE} -C $$dir clean; \
+	done
+
+# recursive make cleanall
+cleanallsubdirs:
+	@for dir in ${SUBDIRS}; do \
+		${MAKE} -C $$dir cleanall; \
+	done
+
+# recursive make gcov
+gcovsubdirs:
+	@for dir in ${SUBDIRS}; do \
+		${MAKE} -C $$dir gcov; \
+	done
+
+# recursive make gcovr
+gcovrsubdirs:
+	@for dir in ${SUBDIRS}; do \
+		${MAKE} -C $$dir gcovr; \
+	done

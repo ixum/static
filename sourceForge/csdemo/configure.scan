@@ -1,0 +1,32 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.69])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_CONFIG_SRCDIR([src/cdo/cdo.h])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_MAKE_SET
+
+# Checks for libraries.
+# FIXME: Replace `main' with a function in `-lgfortran':
+AC_CHECK_LIB([gfortran], [main])
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_CONFIG_FILES([Makefile
+                 src/Makefile
+                 src/alge/Makefile
+                 src/apps/Makefile
+                 src/base/Makefile
+                 src/bft/Makefile
+                 src/cdo/Makefile
+                 src/cogz/Makefile
+                 src/comb/Makefile])
+AC_OUTPUT
